@@ -271,7 +271,7 @@ footer { font-size: .85rem; color: #777; margin-top: 2.5rem; border-top: 1px sol
     <h1 style="margin-bottom:0;">Voice — Sam (voice agent) call log</h1>
     <p class="tagline">Call activity, voicemail queue, and intake capture for <code>voice@noonanlawoffices.com</code> — the firm's after-hours and overflow line.</p>
   </div>
-  <span class="refresh-stamp">Snapshot — <strong>2026-05-20 04:37 UTC</strong> · live data 17 most recent calls (2026-04-29 → 2026-05-03)</span>
+  <span class="refresh-stamp">Snapshot — <strong>2026-05-21 04:38 UTC</strong> · live data 17 most recent calls (2026-04-29 → 2026-05-03)</span>
 </header>
 
 <section class="hero-wrap">
@@ -282,27 +282,27 @@ footer { font-size: .85rem; color: #777; margin-top: 2.5rem; border-top: 1px sol
 <div class="kpis">
   <div class="kpi">
     <div class="kpi-label">Calls received</div>
-    <div class="kpi-value">18</div>
-    <div class="kpi-sub">1 in last 24h · 5 unique callers</div>
+    <div class="kpi-value">21</div>
+    <div class="kpi-sub">3 in last 24h · 5 unique callers</div>
   </div>
   <div class="kpi">
     <div class="kpi-label">Avg call duration</div>
-    <div class="kpi-value">6:26</div>
-    <div class="kpi-sub">median 6:50 · total 115m</div>
+    <div class="kpi-value">6:12</div>
+    <div class="kpi-sub">median 3:35 · total 130m</div>
   </div>
   <div class="kpi warn">
     <div class="kpi-label">Voicemail rate</div>
-    <div class="kpi-value">61%</div>
-    <div class="kpi-sub">11 of 18 calls landed in voicemail</div>
+    <div class="kpi-value">62%</div>
+    <div class="kpi-sub">13 of 21 calls landed in voicemail</div>
   </div>
   <div class="kpi warn">
     <div class="kpi-label">Tool fires per call</div>
     <div class="kpi-value">1.4</div>
-    <div class="kpi-sub">25 tool calls across 18 calls</div>
+    <div class="kpi-sub">29 tool calls across 21 calls</div>
   </div>
   <div class="kpi good">
     <div class="kpi-label">Intakes captured</div>
-    <div class="kpi-value">2</div>
+    <div class="kpi-value">3</div>
     <div class="kpi-sub">[NOONAN INTAKE] urgent emails fired</div>
   </div>
 </div>
@@ -323,7 +323,7 @@ footer { font-size: .85rem; color: #777; margin-top: 2.5rem; border-top: 1px sol
 <p class="tagline">Click any column header to sort. Search box filters across all fields. Voicemail rows expand to show the AI summary.</p>
 <div id="call_grid"></div>
 
-<h2>Voicemail queue <span class="flag-badge info" style="vertical-align:middle; margin-left:.4em;">11 items</span></h2>
+<h2>Voicemail queue <span class="flag-badge info" style="vertical-align:middle; margin-left:.4em;">13 items</span></h2>
 <div id="vm_list"></div>
 
 <h2 style="margin-top:3rem;">Capacity model — projected steady-state <span class="flag-badge warn" style="vertical-align:middle; margin-left:.4em;">PROJECTED</span></h2>
@@ -383,6 +383,42 @@ footer { font-size: .85rem; color: #777; margin-top: 2.5rem; border-top: 1px sol
 
 <script>
 const CALLS = [
+  {
+    "started_pst": "2026-05-20 09:13:59",
+    "duration_s": 606,
+    "from": "+18052521394",
+    "turns": 50,
+    "tools": 3,
+    "vm": true,
+    "intake": true,
+    "sid": "CAfa067284c2b482371238dd86d4295fe0",
+    "type": "voicemail+intake",
+    "vm_summary": "Send intake questionnaire to Jeremy Pemberton (DOB 5/13/1984) at 805-525-2139 and jeremywp@me.com for his Stanislaus County DUI with hospital blood test, license seizure, and arrest four days ago. No priors, no accident, out of custody; Mr. Noonan should review promptly for DMV deadlines and schedule consultation. Caller requested voicemail at end of call.",
+    "intake_subject": "Jeremy Pemberton - DUI - Stanislaus"
+  },
+  {
+    "started_pst": "2026-05-20 09:03:04",
+    "duration_s": 141,
+    "from": "+18052521394",
+    "turns": 12,
+    "tools": 1,
+    "vm": true,
+    "intake": false,
+    "sid": "CA887bedf0abdab1d1af91f833138ab880",
+    "type": "voicemail",
+    "vm_summary": "Jeremy Pemberton (DOB 5/13/1984) needs counsel for a new DUI matter and is calling on his own behalf. Send the intake questionnaire immediately, confirm custody status on the next prompt, and flag for Mr. Noonan to review eligibility and urgency for a same-day callback or consult."
+  },
+  {
+    "started_pst": "2026-05-20 08:59:57",
+    "duration_s": 116,
+    "from": "+18052521394",
+    "turns": 10,
+    "tools": 0,
+    "vm": false,
+    "intake": false,
+    "sid": "CA22e8bea87f6f4a5fda96d0d830a1df8f",
+    "type": "completed"
+  },
   {
     "started_pst": "2026-05-14 16:26:21",
     "duration_s": 491,
@@ -596,26 +632,27 @@ const CALLS = [
   }
 ];
 const METRICS = {
-  "calls_total": 18,
-  "calls_24h": 1,
-  "calls_7d": 18,
-  "duration_total_s": 6950,
-  "duration_avg_s": 386,
-  "duration_median_s": 410,
-  "vm_count": 11,
-  "vm_rate": 61,
-  "intake_count": 2,
-  "tools_total": 25,
+  "calls_total": 21,
+  "calls_24h": 3,
+  "calls_7d": 21,
+  "duration_total_s": 7813,
+  "duration_avg_s": 372,
+  "duration_median_s": 215,
+  "vm_count": 13,
+  "vm_rate": 62,
+  "intake_count": 3,
+  "tools_total": 29,
   "tool_fire_rate": 1.4,
   "unique_callers": 5,
   "callers": {
-    "+18052521394": 13,
+    "+18052521394": 16,
     "+19258768402": 2,
     "+18054287870": 1,
     "+13104971113": 1,
     "unknown": 1
   },
   "by_day": {
+    "2026-05-20": 3,
     "2026-05-14": 1,
     "2026-05-03": 2,
     "2026-05-02": 3,
@@ -636,9 +673,9 @@ function fmtPhone(p) {
 new Chart(document.getElementById('vol_chart'), {
   type: 'bar',
   data: {
-    labels: ["04-29", "04-30", "05-01", "05-02", "05-03", "05-14"],
+    labels: ["04-29", "04-30", "05-01", "05-02", "05-03", "05-14", "05-20"],
     datasets: [{
-      label: 'Calls', data: [3, 5, 4, 3, 2, 1],
+      label: 'Calls', data: [3, 5, 4, 3, 2, 1, 3],
       backgroundColor: 'rgba(31,95,191,.65)', borderColor: '#1f5fbf', borderWidth: 1
     }]
   },
@@ -653,7 +690,7 @@ new Chart(document.getElementById('caller_chart'), {
   data: {
     labels: ["(805) 252-1394", "(925) 876-8402", "(805) 428-7870", "(310) 497-1113", "unknown"],
     datasets: [{
-      data: [13, 2, 1, 1, 1],
+      data: [16, 2, 1, 1, 1],
       backgroundColor: ['#1f5fbf','#4DB37E','#D6A957','#C25C58','#5482CC','#3DA398']
     }]
   },
