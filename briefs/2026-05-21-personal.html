@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0a0e17">
+<title>Personal Brief — May 21, 2026</title>
+<style>
+  :root {
+    --bg: #0a0e17;
+    --bg-panel: #0f1421;
+    --bg-code: #141b2d;
+    --text: #e2e8f0;
+    --text-heading: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-detail: #cbd5e1;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.14);
+    --overdue: #ef4444;
+    --today: #f59e0b;
+    --upcoming: #3b82f6;
+    --matter: #60a5fa;
+    --court: #34d399;
+    --quote-border: #60a5fa;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
+    min-height: 100vh;
+  }
+  nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(10,14,23,0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  nav.topnav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+  }
+  nav.topnav a:hover, nav.topnav a.active {
+    color: var(--accent-hover);
+    background: rgba(96,165,250,0.08);
+  }
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 24px 18px 80px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-heading);
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 28px 0 12px;
+  }
+  h1 { font-size: 28px; margin-top: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+  h2 { font-size: 22px; margin-top: 32px; }
+  h3 { font-size: 18px; margin-top: 24px; color: var(--accent); }
+  h4 { font-size: 16px; color: var(--text-detail); }
+  p { margin: 10px 0; }
+  a { color: var(--accent); text-decoration: none; word-break: break-word; }
+  a:hover { color: var(--accent-hover); text-decoration: underline; }
+  strong { color: var(--text-heading); font-weight: 600; }
+  em { color: var(--text-detail); }
+  ul, ol { padding-left: 24px; margin: 10px 0; }
+  li { margin: 4px 0; }
+  li.task { list-style: none; margin-left: -20px; }
+  li.task input[type=checkbox] { margin-right: 8px; transform: scale(1.05); }
+  code {
+    background: var(--bg-code);
+    color: #fbbf24;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.88em;
+    border: 1px solid var(--border);
+  }
+  pre {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    overflow-x: auto;
+    margin: 14px 0;
+  }
+  pre code {
+    background: transparent;
+    padding: 0;
+    border: 0;
+    color: var(--text);
+    font-size: 13px;
+  }
+  blockquote {
+    border-left: 3px solid var(--quote-border);
+    padding: 4px 14px;
+    margin: 14px 0;
+    color: var(--text-detail);
+    background: rgba(96,165,250,0.04);
+    border-radius: 0 6px 6px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+    white-space: normal;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    color: var(--text-heading);
+    font-weight: 600;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border-strong);
+  }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 24px 0; }
+  footer {
+    margin-top: 40px;
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+    text-align: center;
+  }
+  footer a { color: var(--text-muted); }
+  footer a:hover { color: var(--accent-hover); }
+
+  /* mobile tweaks */
+  @media (max-width: 640px) {
+    body { font-size: 15px; }
+    main { padding: 16px 14px 80px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 19px; }
+    h3 { font-size: 17px; }
+    table { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="https://mrbreadbaby.github.io/command-center/brief.html" class="active">Personal</a>
+  <a href="https://mrbreadbaby.github.io/command-center/firm/firm-brief-latest.html">Firm</a>
+  <a href="https://mrbreadbaby.github.io/command-center/">Dashboard</a>
+  <a href="https://mrbreadbaby.github.io/command-center/">Wiki Map</a>
+</nav>
+<main>
+<h1>Personal Brief — May 21, 2026</h1>
+<h2>Today</h2>
+<ul>
+<li><strong>🔴 Christine has an open loop with you from overnight — Tue/Wed calendar + Steve Alpers coverage.</strong> She sent two calendar screenshots Wed 22:54 + 22:55 PT (labeled &quot;Wednesday&quot; and &quot;Tuesday&quot;), then escalated at <strong>5/21 01:29 PT</strong>: &quot;Steve Alpers is working on the cases that Darryl was involved with that includes your Ron that includes Navarro that includes Raul Willis. That includes Derek Rodrigues…&quot; Followed by <strong>01:32 PT &quot;Call me&quot;</strong> and <strong>04:59–05:01 PT &quot;Ok so this is what we talked about around may 9 … We need to get on this asap.&quot;</strong> You replied at 05:43 PT with &quot;Those have all been filed.&quot; Loop still open — call/text owed when you&#x27;re up, and the Steve-Alpers-on-Daryl&#x27;s-cases thread is new information you haven&#x27;t acknowledged.</li>
+<li><strong>🔴 Silva v. Billingsley pro per (+1 805-459-4195) asking for tactical advice on the tentative.</strong> 5/21 03:11 PT: <em>&quot;So based on the tentative I am just going to say I appreciate the tentative your honor. I rest on it and have nothing to say. Then silva is going to argue a bunch of non sense and I rebuttal? Or do I just say I rest on…&quot;</em> This is the matter you built v4/v8 binders for on 5/18 + 5/19. Tentative is in their favor; client wants to know whether to rest-on-the-tentative-and-rebuttal vs. rest-and-stay-silent. Quick reply owed.</li>
+<li><strong>🟡 EACBA MCLE today, Thu 5/21 noon PT — &quot;Burn Bright, Not Out: The Art of Practicing Law With Boundaries.&quot;</strong> Two reminders sit in admin@ inbox (<code>19e4662cd32d88ee</code> is the 5/20 9:15 AM PT nudge). Decide register / forward to JWN / skip — call is owed today.</li>
+<li><strong>🟡 Friend vote campaign is live and producing data.</strong> You broadcast <code>https://mrbreadbaby.github.io/lawtime-vote/</code> to 15+ contacts last evening. Early returns: Robert (+1 805-471-7642) ranked LegalOwl.ai #1, BriefClerk.ai #2. Tracy/Pat (+1 951-733-3426) and Dave (+1 714-658-0089) both landed on LegalOwl. Cathy Cashman + Hattie + Mary all engaged. Branding decision is converging — needs Layer 0 pick when you&#x27;re ready. → <a href="https://mrbreadbaby.github.io/lawtime-vote/">vote page</a></li>
+<li><strong>Personal Google Calendar (jerwalter@gmail.com) still not accessible</strong> from scheduled-task scope (admin@ only) — Spanish class / family items need manual review. Carry-forward from 5/20.</li>
+</ul>
+<h2>Noonan (pointer)</h2>
+<p>Loudest firm items today: <strong>Mejia-Mejia jury trial Tue 5/26 (5 days out) — JWN three-option decision owed today</strong> (writ+stay v0.1 vs § 1050 continuance vs trial prep), and <strong>Kramer 5/19 NO-SHOW recovery</strong> — Dept 11 minute-order call (510-690-2700) + apology comms to cocounsel Octavio + DDA Clark. JWN gave <strong>Blackwell Hobbs pivot direction</strong> 5/20 14:33 PT — file continuance + motion to compel (was M2T&amp;Q). Full detail: <a href="computer:///Users/jeremypemberton/Documents/Cases/Noonan/Admin/wiki/briefings/firm-2026-05-21.md">Noonan brief</a>.</p>
+<h2>Personal tracks</h2>
+<ul>
+<li><strong>AMMCG (Pemberton v. Adamski) — 5/20 CRC 8.26(c) deemed-granted clock check came due yesterday.</strong> No closure recorded in this morning&#x27;s data. If you ran the verification (SLO Superior 24CV-0581 FW-001 status check via Odyssey portal), the carry-forward can come down; if not, this is now ~12 hours stale. Next clock = 6/8.</li>
+<li><strong>Med cycle:</strong> today is 5/21; next refill window 6/12–6/14. No action this week.</li>
+<li><strong>FBI fingerprint resubmission:</strong> carry-forward, no update.</li>
+<li><strong>Shipments:</strong> USPS Priority Mail International <strong>CA006765316US</strong> (monthly meds, SLO → Torrox) — last known status as of 5/19 check: <em>On the Way — Departed Post Office, San Luis Obispo CA, 5/16 3:31 PM PT.</em> No live USPS lookup this run (Chrome not up in scheduled-task scope; USPS page is JS-rendered and needs Chrome MCP). Typical PMI delivery 6–10 business days → window 5/25–6/1; still inside it. → <a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=CA006765316US">USPS tracking</a></li>
+<li><strong>Friday Cathy Cashman catch-up confirmed</strong> (&quot;excited to catch-up Friday brotha!&quot; — 5/20 19:49 PT). No time pinned yet.</li>
+<li><strong>Spain — local plans.</strong> +34-prefix activity overnight (photos exchanged with friend, sent vote link) — no specific commitments surfaced.</li>
+<li><strong>Other personal:</strong> BA UK261 claim B2NHJ8 (Step 5 parked in Cliffroom Chrome) and United flight credits (login + share codes) remain on triage queue from 5/12 — <strong>9 days outstanding.</strong></li>
+</ul>
+<h2>Overnight (iMessage &amp; messages)</h2>
+<ul>
+<li><strong>Christine (+1 925-876-8402)</strong> — long, frazzled thread Wed afternoon → Thu pre-dawn. Wed 16:43 PT she opened with &quot;That&#x27;s great news!&quot; then immediately escalated about missing continuation-motion confirmations. By 19:46 she was &quot;in desperado mode&quot; about the trial Tuesday + Hobbs notion missing. You replied 20:30 PT promising &quot;an email with copies of all the filings related to the immediate 10 day upcoming calendar&quot; — that&#x27;s the 14:22 PT 10-day email you sent earlier in the day. She acknowledged 22:54-22:55 with two calendar screenshots. <strong>Then she opened a new front at 01:29 PT</strong> about Steve Alpers covering Daryl&#x27;s cases (Ron / Navarro / Raul Willis / Derek Rodrigues), asked you to call at 01:32, and re-pinged 04:59–05:01 with a 5/9-reference and &quot;We need to get on this asap.&quot; Your 05:43 PT &quot;Those have all been filed&quot; reply addresses the motions but <strong>not</strong> the Alpers/Daryl coverage thread.</li>
+<li><strong>Silva v. Billingsley pro per (+1 805-459-4195)</strong> — tentative-strategy question 03:11 PT (above). Earlier in the evening (17:01–17:03 PT) they forwarded a Silva email — you reacted with appreciation; no substantive reply yet.</li>
+<li><strong>Friend vote rollout</strong> — you sent the vote URL to 15+ contacts between 16:42–16:58 PT, then a Spain-side number at 16:58. Real engagement: Hattie (+1 805-714-9419) voted (&quot;Done 😊&quot;), Robert ranked the top 5 (LegalOwl &gt; BriefClerk &gt; LawThink &gt; LegalSideKick &gt; LegalAnvil), Tracy/Pat (+1 951-733-3426) reasoned through &quot;LegalOwl&quot; sounding/flowing best in an introduction, Dave (+1 714-658-0089) seconded LegalOwl, Cathy Cashman engaged warmly on the GitHub stack.</li>
+<li><strong>Cathy Cashman</strong> — Fri catch-up confirmed; she&#x27;s excited about the SpaceX/Starlink-stack voice-agent story you shared.</li>
+<li><strong>Hattie (+1 805-714-9419) follow-up</strong> — you offered her family a free stay on the southern coast of Spain when they next visit. She loved the photos.</li>
+<li><strong>No urgent inbound from family / wife (+34-prefix numbers)</strong> beyond the photo exchange.</li>
+</ul>
+<h2>Inbox</h2>
+<ol>
+<li><strong>EACBA MCLE Thu 5/21 noon — &quot;Burn Bright, Not Out&quot;</strong> (<code>19e4662cd32d88ee</code>, 5/20 10:15 AM PT). Decide register / forward to JWN / skip today.</li>
+<li><strong>LegalEase potential-client referral</strong> (<code>19e45d55951f8a71</code> from <code>malana_dussuau@legaleaseplan.com</code>, 5/20 7:40 AM PT). Standard intake referral — route to Christine / JWN per normal intake flow.</li>
+<li>Voice-agent voicemail recaps from (805) 252-1394 (two consecutive calls 9:00 / 9:03 PT 5/20) — auto-routed to <code>voice@noonanlawoffices.com</code>; no Jeremy action.</li>
+<li>Everything else in admin@ overnight is firm-routed (Mejia-Mejia, Kramer, Blackwell strategy thread) → handle in today&#x27;s Noonan brief, not here.</li>
+</ol>
+<h2>Triage queue (top 6)</h2>
+<p>Oldest unresolved personal-relevant items from <code>## Queue</code> (firm-only stragglers are surfaced in the Noonan brief instead):</p>
+<ol>
+<li><strong>Personal intake email — split firm vs. personal forwards</strong> (asked 2026-05-01, 20 days outstanding). A/B/C — gmail plus-alias is the cheapest.</li>
+<li><strong>Personal <code>/dashboards/</code> D3 pages — cdnjs-blocked render bug</strong> (asked 2026-05-01, 20 days). Five-line jsdelivr fallback per file; mirrors the firm-side fix already committed.</li>
+<li><strong><code>/firm/</code> auth model when full case-background pages ship</strong> (asked 2026-05-01, 20 days). Cloudflare Pages + Access vs. Vercel + NextAuth vs. defer.</li>
+<li><strong>BA UK261 claim B2NHJ8</strong> (asked 2026-05-12, 9 days). Submitted? Case ref? Tab parked in Cliffroom at Step 5.</li>
+<li><strong>United flight credits</strong> (asked 2026-05-12, 9 days). 5-minute login on united.com → Travel Bank.</li>
+<li><strong>Wiki-map daily rebuild — 2026-05-16 run still missing</strong> (asked 2026-05-17, 4 days). Pick A (auto-detect sandbox prefix in <code>rebuild.py</code>) vs. B (export overrides in wrapper) vs. C (catch-up run + pick A or B).</li>
+</ol>
+<p>Run <code>let&#x27;s triage</code> / <code>run the queue</code> / <code>pop the questions</code> to walk these via AskUserQuestion.</p>
+<h2>Red flags</h2>
+<ul>
+<li><strong>Christine&#x27;s 01:29–05:01 PT pre-dawn cluster</strong> — Steve Alpers / Daryl&#x27;s cases thread (Ron, Navarro, Raul Willis, Derek Rodrigues) is new and unacknowledged. Your 05:43 reply addresses only the filing-confirmation question, not the coverage question.</li>
+<li><strong>AMMCG 5/20 deemed-granted clock check</strong> — no closure recorded; ~12 hours stale.</li>
+<li><strong>Silva v. Billingsley pro per — tentative-strategy reply owed</strong> (3 hours since their question at 03:11 PT).</li>
+<li><strong>iCloud Mail mirror Phase 1</strong> — 6 days outstanding since 5/15 handoff opened.</li>
+<li><strong>LawTime Products branding decision</strong> — vote producing clean signal (LegalOwl converging), but still not a Layer 0 pick.</li>
+<li><strong>BA + United claims</strong> — 9 days outstanding; both unblock with ~5 minutes of your time.</li>
+<li><strong>Wiki-map daily rebuild</strong> — 4 days since 5/16 gap; durable fix still pending vs. workaround.</li>
+<li><strong>Triage queue has stale 5/19 entries</strong> (Otto Fink, LaRosa, Baylon, Hunter, Kramer carry-overs) — needs a <code>let&#x27;s triage</code> closure pass.</li>
+</ul>
+<h2>Live dashboards</h2>
+<ul>
+<li><a href="https://mrbreadbaby.github.io/command-center/">Practice Wiki Map</a></li>
+<li><a href="https://mrbreadbaby.github.io/command-center/audit.html">System Audit</a></li>
+<li><a href="computer:///Users/jeremypemberton/Documents/Cases/Noonan/Admin/wiki/hot.md">Hot Cache</a></li>
+<li><a href="computer:///Users/jeremypemberton/Documents/wiki/triage/OPEN_QUESTIONS.md">Triage Queue</a></li>
+<li><a href="computer:///Users/jeremypemberton/Documents/Cases/Noonan/Admin/Noonan_Practice_Dashboard.md">Noonan Practice Dashboard</a></li>
+<li><a href="computer:///Users/jeremypemberton/Documents/Cases/Noonan/Admin/wiki/briefings/firm-2026-05-21.md">Today&#x27;s Noonan Brief</a></li>
+<li><a href="https://mrbreadbaby.github.io/lawtime-vote/">Vote page</a></li>
+</ul>
+<h2>Notes</h2>
+<ul>
+<li>chat.db mirror last updated 2026-05-21 05:53 UTC (~12 min before this run) — fresh; 94 messages in the last 26 hrs.</li>
+<li>USPS live tracking not pulled this run (Chrome not up in scheduled-task scope). <code>last_checked</code> in <code>active-shipments.json</code> bumped to 2026-05-21; <code>last_known_status</code> unchanged (no new scan since 5/16 departure).</li>
+<li>Personal Google Calendar (jerwalter@gmail.com) still not accessible from this scope — flagged again. SKILL needs personal calendar wired in to surface Spanish class + family items.</li>
+<li>admin@noonan calendar 5/21–5/22 window had only one event: Fri 5/22 Navarro/Rodrigues Recusal Hearings.</li>
+<li>94 messages in 26h is unusually heavy — Christine&#x27;s cluster + the friend-vote rollout combined.</li>
+</ul>
+<footer>
+  Generated 2026-05-21 06:05 PT &middot;
+  <a href="computer:///sessions/quirky-sweet-fermi/mnt/Documents/wiki/briefings/2026-05-21.md">Open source .md in iCloud</a>
+  &middot; <a href="https://mrbreadbaby.github.io/command-center/">Dashboard</a>
+</footer>
+</main>
+</body>
+</html>
