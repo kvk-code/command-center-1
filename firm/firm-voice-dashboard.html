@@ -271,7 +271,7 @@ footer { font-size: .85rem; color: #777; margin-top: 2.5rem; border-top: 1px sol
     <h1 style="margin-bottom:0;">Voice — Sam (voice agent) call log</h1>
     <p class="tagline">Call activity, voicemail queue, and intake capture for <code>voice@noonanlawoffices.com</code> — the firm's after-hours and overflow line.</p>
   </div>
-  <span class="refresh-stamp">Snapshot — <strong>2026-05-21 04:38 UTC</strong> · live data 17 most recent calls (2026-04-29 → 2026-05-03)</span>
+  <span class="refresh-stamp">Snapshot — <strong>2026-05-23 04:30 UTC</strong> · live data 17 most recent calls (2026-04-29 → 2026-05-03)</span>
 </header>
 
 <section class="hero-wrap">
@@ -282,27 +282,27 @@ footer { font-size: .85rem; color: #777; margin-top: 2.5rem; border-top: 1px sol
 <div class="kpis">
   <div class="kpi">
     <div class="kpi-label">Calls received</div>
-    <div class="kpi-value">21</div>
-    <div class="kpi-sub">3 in last 24h · 5 unique callers</div>
+    <div class="kpi-value">27</div>
+    <div class="kpi-sub">6 in last 24h · 5 unique callers</div>
   </div>
   <div class="kpi">
     <div class="kpi-label">Avg call duration</div>
-    <div class="kpi-value">6:12</div>
-    <div class="kpi-sub">median 3:35 · total 130m</div>
+    <div class="kpi-value">5:47</div>
+    <div class="kpi-sub">median 3:35 · total 156m</div>
   </div>
   <div class="kpi warn">
     <div class="kpi-label">Voicemail rate</div>
-    <div class="kpi-value">62%</div>
-    <div class="kpi-sub">13 of 21 calls landed in voicemail</div>
+    <div class="kpi-value">67%</div>
+    <div class="kpi-sub">18 of 27 calls landed in voicemail</div>
   </div>
   <div class="kpi warn">
     <div class="kpi-label">Tool fires per call</div>
-    <div class="kpi-value">1.4</div>
-    <div class="kpi-sub">29 tool calls across 21 calls</div>
+    <div class="kpi-value">1.3</div>
+    <div class="kpi-sub">36 tool calls across 27 calls</div>
   </div>
   <div class="kpi good">
     <div class="kpi-label">Intakes captured</div>
-    <div class="kpi-value">3</div>
+    <div class="kpi-value">4</div>
     <div class="kpi-sub">[NOONAN INTAKE] urgent emails fired</div>
   </div>
 </div>
@@ -323,7 +323,7 @@ footer { font-size: .85rem; color: #777; margin-top: 2.5rem; border-top: 1px sol
 <p class="tagline">Click any column header to sort. Search box filters across all fields. Voicemail rows expand to show the AI summary.</p>
 <div id="call_grid"></div>
 
-<h2>Voicemail queue <span class="flag-badge info" style="vertical-align:middle; margin-left:.4em;">13 items</span></h2>
+<h2>Voicemail queue <span class="flag-badge info" style="vertical-align:middle; margin-left:.4em;">18 items</span></h2>
 <div id="vm_list"></div>
 
 <h2 style="margin-top:3rem;">Capacity model — projected steady-state <span class="flag-badge warn" style="vertical-align:middle; margin-left:.4em;">PROJECTED</span></h2>
@@ -383,6 +383,78 @@ footer { font-size: .85rem; color: #777; margin-top: 2.5rem; border-top: 1px sol
 
 <script>
 const CALLS = [
+  {
+    "started_pst": "2026-05-21 11:26:15",
+    "duration_s": 120,
+    "from": "+18052521394",
+    "turns": 10,
+    "tools": 1,
+    "vm": true,
+    "intake": false,
+    "sid": "CAbfdfe72493287db796bfea51082e6b94",
+    "type": "voicemail",
+    "vm_summary": "Jeremy Thompson called seeking to discuss a new case directly with John Noonan after navigating menu options. No specific charges, timeline, or urgency details were provided. Firm should initiate contact to qualify the matter and schedule a consultation."
+  },
+  {
+    "started_pst": "2026-05-21 11:05:31",
+    "duration_s": 463,
+    "from": "+18052521394",
+    "turns": 39,
+    "tools": 1,
+    "vm": true,
+    "intake": false,
+    "sid": "CAeb5e81b216a610a5122f6d8f9d9060fc",
+    "type": "voicemail",
+    "vm_summary": "Jeremy Pemberton (DOB 5/13/1984, 805-252-1394, jeremywp@me.com) is calling about a new DUI arrest over the weekend in Milpitas/Santa Clara County; he is out of custody with no known court date, no priors, no accident, and lost paperwork after a hospital blood test.  \nSend the intake questionnaire by text immediately, flag for urgent callback to confirm details and schedule a consultation before any DMV or court deadlines."
+  },
+  {
+    "started_pst": "2026-05-21 08:46:55",
+    "duration_s": 90,
+    "from": "+18052521394",
+    "turns": 8,
+    "tools": 0,
+    "vm": false,
+    "intake": false,
+    "sid": "CA526e30167b009e9476f6d010d9e26885",
+    "type": "completed"
+  },
+  {
+    "started_pst": "2026-05-21 07:57:51",
+    "duration_s": 504,
+    "from": "+18052521394",
+    "turns": 42,
+    "tools": 3,
+    "vm": true,
+    "intake": true,
+    "sid": "CA0530ceb206e9a40fb3d4d800f776fcf0",
+    "type": "voicemail+intake",
+    "vm_summary": "Jeremy Pemberton (DOB 5/13/1984, 805-252-1394, jeremywp@me.com) needs immediate callback from John regarding his DUI manslaughter arrest ~6 days ago in Alameda County (Dublin); he is out of custody with no case number available.  \nNote the tight DMV/court deadlines and send the intake questionnaire link right away.  \nHe requested voicemail transfer at end of call\u2014review and follow up same day.",
+    "intake_subject": "Jeremy Pemberton - DUI manslaughter - Alameda"
+  },
+  {
+    "started_pst": "2026-05-21 06:27:05",
+    "duration_s": 320,
+    "from": "+18052521394",
+    "turns": 27,
+    "tools": 1,
+    "vm": true,
+    "intake": false,
+    "sid": "CA888c3aff6dd310732591000f4bf710cf",
+    "type": "voicemail",
+    "vm_summary": "Jeremy Pennington needs representation for a DUI in Alameda County with a court date in four days. Flag intake as urgent for Mr. Noonan, send the questionnaire and confirmation text to 805-252-1394 and JeremyWP@me.com, then schedule a same-day consultation or direct call with John."
+  },
+  {
+    "started_pst": "2026-05-21 06:21:15",
+    "duration_s": 63,
+    "from": "+18052521394",
+    "turns": 5,
+    "tools": 1,
+    "vm": true,
+    "intake": false,
+    "sid": "CAc013d0d5e7c865b103c836ba5cabcf8b",
+    "type": "voicemail",
+    "vm_summary": "New DUI client seeking representation; intake in progress to capture key facts for attorney review. Firm should complete screening and schedule consultation promptly, as DUI matters often involve court deadlines. No existing case or urgency details noted yet."
+  },
   {
     "started_pst": "2026-05-20 09:13:59",
     "duration_s": 606,
@@ -632,26 +704,27 @@ const CALLS = [
   }
 ];
 const METRICS = {
-  "calls_total": 21,
-  "calls_24h": 3,
-  "calls_7d": 21,
-  "duration_total_s": 7813,
-  "duration_avg_s": 372,
+  "calls_total": 27,
+  "calls_24h": 6,
+  "calls_7d": 27,
+  "duration_total_s": 9373,
+  "duration_avg_s": 347,
   "duration_median_s": 215,
-  "vm_count": 13,
-  "vm_rate": 62,
-  "intake_count": 3,
-  "tools_total": 29,
-  "tool_fire_rate": 1.4,
+  "vm_count": 18,
+  "vm_rate": 67,
+  "intake_count": 4,
+  "tools_total": 36,
+  "tool_fire_rate": 1.3,
   "unique_callers": 5,
   "callers": {
-    "+18052521394": 16,
+    "+18052521394": 22,
     "+19258768402": 2,
     "+18054287870": 1,
     "+13104971113": 1,
     "unknown": 1
   },
   "by_day": {
+    "2026-05-21": 6,
     "2026-05-20": 3,
     "2026-05-14": 1,
     "2026-05-03": 2,
@@ -673,9 +746,9 @@ function fmtPhone(p) {
 new Chart(document.getElementById('vol_chart'), {
   type: 'bar',
   data: {
-    labels: ["04-29", "04-30", "05-01", "05-02", "05-03", "05-14", "05-20"],
+    labels: ["04-29", "04-30", "05-01", "05-02", "05-03", "05-14", "05-20", "05-21"],
     datasets: [{
-      label: 'Calls', data: [3, 5, 4, 3, 2, 1, 3],
+      label: 'Calls', data: [3, 5, 4, 3, 2, 1, 3, 6],
       backgroundColor: 'rgba(31,95,191,.65)', borderColor: '#1f5fbf', borderWidth: 1
     }]
   },
@@ -690,7 +763,7 @@ new Chart(document.getElementById('caller_chart'), {
   data: {
     labels: ["(805) 252-1394", "(925) 876-8402", "(805) 428-7870", "(310) 497-1113", "unknown"],
     datasets: [{
-      data: [16, 2, 1, 1, 1],
+      data: [22, 2, 1, 1, 1],
       backgroundColor: ['#1f5fbf','#4DB37E','#D6A957','#C25C58','#5482CC','#3DA398']
     }]
   },
