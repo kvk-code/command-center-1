@@ -1,0 +1,275 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Ops Status — Noonan / Claude Operations</title>
+<meta http-equiv="refresh" content="300">
+<style>
+  :root {
+    --bg: #0f1115; --fg: #e8eaed; --muted: #8a93a4; --line: #232733;
+    --ok: #34d27e; --warn: #f5b400; --fail: #ef4146; --accent: #6cb6ff;
+    --card: #161922;
+  }
+  body { background:var(--bg); color:var(--fg); font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin:0; padding:18px 14px 60px; font-size:14px; line-height:1.45; }
+  h1 { margin:0 0 4px; font-size:20px; }
+  .sub { color:var(--muted); font-size:12px; }
+  .meta { color:var(--muted); font-size:11px; margin-top:2px; }
+  .updated { font-size:12px; color:var(--muted); margin-bottom:14px; }
+  h2 { font-size:14px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin:26px 0 8px; }
+  table { width:100%; border-collapse:collapse; background:var(--card); border-radius:8px; overflow:hidden; }
+  td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  .row-tail td { padding-top:0; }
+  .row-tail pre {
+    background:#0a0c12; color:var(--muted); border-radius:5px;
+    padding:8px 10px; font-size:11px; margin:0;
+    white-space:pre-wrap; word-break:break-word; max-height:80px; overflow:auto;
+  }
+  .cell-status { width:90px; }
+  .cell-when { width:140px; }
+  .cell-links { width:240px; font-size:12px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  code { background:#222530; padding:1px 5px; border-radius:3px; font-size:11px; }
+  .title { font-weight:600; }
+  .badge {
+    display:inline-block; padding:3px 9px; border-radius:4px;
+    font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .badge.ok    { background:rgba(52,210,126,0.15); color:var(--ok); }
+  .badge.warn  { background:rgba(245,180,0,0.15); color:var(--warn); }
+  .badge.fail  { background:rgba(239,65,70,0.15); color:var(--fail); }
+  .badge.muted { background:#1d2030; color:var(--muted); }
+  .footer { margin-top:30px; font-size:11px; color:var(--muted); }
+  .footer a { color:var(--muted); text-decoration:underline; }
+  .quick { margin-top:16px; font-size:12px; }
+  .quick a { margin-right:14px; }
+</style></head>
+<body>
+  <h1>Ops Status</h1>
+  <div class="sub">Consistent operating activities — Noonan + Claude Operations</div>
+  <div class="updated">Last rebuilt: Tue May 26, 2026 00:57 CEST · auto-refreshes every 5 min</div>
+
+  <div class="quick">
+    <a href="https://mrbreadbaby.github.io/command-center/firm/">Firm dashboards</a>
+    <a href="https://mrbreadbaby.github.io/command-center/firm/firm-voice-dashboard.html">Voice</a>
+    <a href="https://mrbreadbaby.github.io/command-center/firm/firm-discovery-dashboard.html">Discovery</a>
+    <a href="https://mrbreadbaby.github.io/command-center/firm/firm-wiki-map.html">Wiki map</a>
+    <a href="https://mrbreadbaby.github.io/command-center/brief.html">Personal brief</a>
+  </div>
+
+  <h2>LaunchAgents (live)</h2>
+  <table>
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">OK</span></td>
+          <td class="cell-name">
+            <div class="title">iMessage mirror copy</div>
+            <div class="sub">Copy chat.db so daily-personal-brief has fresh iMessage data</div>
+            <div class="meta">07:48 daily (Madrid) · owner: Claude Operations</div>
+          </td>
+          <td class="cell-when">
+            <div>17h ago</div>
+            <div class="sub">Mon May 25 07:53</div>
+          </td>
+          <td class="cell-links">
+            <a href="file:///Users/jeremypemberton/Documents/.imessage_mirror/logs/scheduled-task.log">log</a> · —
+          </td>
+        </tr>
+        <tr class="row-tail row-ok">
+          <td colspan="4"><pre>=== Mon May 25 07:48:04 CEST 2026 ===
+
+-rw-------@ 1 jeremypemberton  staff  646467584 May 25 07:48 /Users/jeremypemberton/Documents/.imessage_mirror/chat.db
+Mon May 25 07:53:07 CEST 2026</pre></td>
+        </tr>
+        
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">OK</span></td>
+          <td class="cell-name">
+            <div class="title">Wiki-map daily rebuild</div>
+            <div class="sub">Rebuild wiki-map.html + firm-wiki-map.html + push to GitHub Pages</div>
+            <div class="meta">07:45 daily (Madrid) · owner: Noonan</div>
+          </td>
+          <td class="cell-when">
+            <div>17h ago</div>
+            <div class="sub">Mon May 25 07:45</div>
+          </td>
+          <td class="cell-links">
+            <a href="file:///Users/jeremypemberton/Documents/wiki/triage/wiki-map-rebuild.log">log</a> · <a href="https://mrbreadbaby.github.io/command-center/dashboards/wiki-map.html" target="_blank">live_url</a> · <a href="https://mrbreadbaby.github.io/command-center/firm/firm-wiki-map.html" target="_blank">firm</a>
+          </td>
+        </tr>
+        <tr class="row-tail row-ok">
+          <td colspan="4"><pre>    https://mrbreadbaby.github.io/command-center/dashboards/wiki-map.html
+    https://mrbreadbaby.github.io/command-center/firm/firm-wiki-map.html
+
+Report: /Users/jeremypemberton/Documents/wiki/triage/wiki-map-rebuild-2026-05-25.md</pre></td>
+        </tr>
+        
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">OK</span></td>
+          <td class="cell-name">
+            <div class="title">Voice + discovery dashboard rebuild</div>
+            <div class="sub">Rebuild firm-voice-dashboard.html + firm-discovery-dashboard.html from Voice Intake Log Sheet; push to GitHub Pages</div>
+            <div class="meta">06:30 daily (Madrid) · owner: LawTime Products</div>
+          </td>
+          <td class="cell-when">
+            <div>18h ago</div>
+            <div class="sub">Mon May 25 06:30</div>
+          </td>
+          <td class="cell-links">
+            <a href="file:///Users/jeremypemberton/Documents/wiki/triage/voice-dashboard-rebuild.log">log</a> · <a href="https://mrbreadbaby.github.io/command-center/firm/firm-voice-dashboard.html" target="_blank">live_url</a> · <a href="https://mrbreadbaby.github.io/command-center/firm/firm-discovery-dashboard.html" target="_blank">discovery</a> · <a href="https://mrbreadbaby.github.io/command-center/firm/" target="_blank">firm_index</a>
+          </td>
+        </tr>
+        <tr class="row-tail row-ok">
+          <td colspan="4"><pre>pushed 2852b5773defe0798493d4c36073b55b24da1229
+pushed 8e5dc6935a9fb940c3f709392c530dc6bc3be0bf
+pushed 8e5c3b08d76bb340280061ece69cec4700ca1e88
+OK</pre></td>
+        </tr>
+        
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">OK</span></td>
+          <td class="cell-name">
+            <div class="title">Cowork global-instructions drift check</div>
+            <div class="sub">Daily diff of live Cowork global instructions vs canonical; osascript notification on drift</div>
+            <div class="meta">09:00 daily (Madrid) · owner: Claude Operations</div>
+          </td>
+          <td class="cell-when">
+            <div>15h ago</div>
+            <div class="sub">Mon May 25 09:00</div>
+          </td>
+          <td class="cell-links">
+            <a href="file:///Users/jeremypemberton/Documents/wiki/triage/cowork-drift-check.log">log</a> · —
+          </td>
+        </tr>
+        <tr class="row-tail row-ok">
+          <td colspan="4"><pre>=== Mon May 25 09:00:05 CEST 2026 ===
+OK: live matches canonical-normalized (sha256=2d939890116a)
+  canonical: /Users/jeremypemberton/Documents/Claude/Projects/Claude Operations/Cowork-Setup-Current/current/01-Global-Instructions.md
+  live:      /Users/jeremypemberton/Library/Application Support/Claude/local-agent-mode-sessions/dbe5d3e0-cffe-4913-88dd-6fd07ffd7d3b/688e1ed6-4fb3-4ac4-9f54-bcaa5fca32df/memory/CLAUDE.md</pre></td>
+        </tr>
+        
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">OK</span></td>
+          <td class="cell-name">
+            <div class="title">Ops-status dashboard rebuild</div>
+            <div class="sub">Rebuild this dashboard from registry.json + live launchctl data + log mtimes</div>
+            <div class="meta">Every 15 min (Madrid) · owner: Claude Operations</div>
+          </td>
+          <td class="cell-when">
+            <div>0s ago</div>
+            <div class="sub">Tue May 26 00:57</div>
+          </td>
+          <td class="cell-links">
+            <a href="file:///Users/jeremypemberton/Documents/wiki/triage/ops-status-build.log">log</a> · <a href="https://mrbreadbaby.github.io/command-center/ops-status.html" target="_blank">live_url</a>
+          </td>
+        </tr>
+        <tr class="row-tail row-ok">
+          <td colspan="4"><pre>[2026-05-26 00:57:12 CEST] rebuild start</pre></td>
+        </tr>
+        </table>
+
+  <h2>Cowork scheduled tasks (registry)</h2>
+  <div class="sub" style="margin-bottom:8px">Live enabled-state lives in the Cowork app. Registry below shows expected state per last manual update.</div>
+  <table>
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">enabled</span></td>
+          <td class="cell-name">
+            <div class="title">Daily personal brief (+ firm brief Mon/Thu)</div>
+            <div class="sub">Cross-cutting personal digest; Mon+Thu also produces Noonan firm brief in same session</div>
+            <div class="meta">08:02 daily (Madrid) · owner: Noonan · id: <code>daily-personal-brief</code></div>
+          </td>
+          <td class="cell-when">
+            <div class="sub">expected state set:</div>
+            <div>2026-05-26 (re-enabled post-dark)</div>
+          </td>
+          <td class="cell-links"><a href="https://mrbreadbaby.github.io/command-center/brief.html" target="_blank">personal</a> · <a href="https://mrbreadbaby.github.io/command-center/firm/firm-brief-latest.html" target="_blank">firm</a></td>
+        </tr>
+        
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">enabled</span></td>
+          <td class="cell-name">
+            <div class="title">Daily desk cleanup (07:00)</div>
+            <div class="sub">Aggressive Mac desk hygiene — app quits + Chrome/Finder/Terminal window cleanup + dispatch-diary entry</div>
+            <div class="meta">07:02 daily (Madrid) · owner: Personal · id: <code>daily-desk-cleanup</code></div>
+          </td>
+          <td class="cell-when">
+            <div class="sub">expected state set:</div>
+            <div>2026-05-26 (re-enabled post-dark)</div>
+          </td>
+          <td class="cell-links">—</td>
+        </tr>
+        
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">enabled</span></td>
+          <td class="cell-name">
+            <div class="title">Dispatch overnight resume (04:08)</div>
+            <div class="sub">Wake, run queued overnight prompts from triage, save state, send proactive morning brief</div>
+            <div class="meta">04:08 daily (Madrid) · owner: Claude Operations · id: <code>dispatch-overnight-resume</code></div>
+          </td>
+          <td class="cell-when">
+            <div class="sub">expected state set:</div>
+            <div>2026-05-26 (re-enabled post-dark)</div>
+          </td>
+          <td class="cell-links">—</td>
+        </tr>
+        
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">enabled</span></td>
+          <td class="cell-name">
+            <div class="title">Discovery inbox sweep</div>
+            <div class="sub">Daily admin@ Gmail Discovery-labeled thread sweep; Rule 15 producer auto-build; child-label apply</div>
+            <div class="meta">09:24 daily (Madrid) · owner: Noonan · id: <code>discovery-inbox-sweep</code></div>
+          </td>
+          <td class="cell-when">
+            <div class="sub">expected state set:</div>
+            <div>2026-05-26 (re-enabled post-dark)</div>
+          </td>
+          <td class="cell-links"><a href="https://mrbreadbaby.github.io/command-center/firm/firm-discovery-dashboard.html" target="_blank">live_url</a></td>
+        </tr>
+        
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">enabled</span></td>
+          <td class="cell-name">
+            <div class="title">Weekly memory review (Mon 04:07)</div>
+            <div class="sub">Reflective pass over memory files + MEMORY.md index + hot cache</div>
+            <div class="meta">Mon 04:07 (Madrid) · owner: Claude Operations · id: <code>weekly-memory-review</code></div>
+          </td>
+          <td class="cell-when">
+            <div class="sub">expected state set:</div>
+            <div>2026-05-26 (re-enabled post-dark)</div>
+          </td>
+          <td class="cell-links">—</td>
+        </tr>
+        
+        <tr class="row-ok">
+          <td class="cell-status"><span class="badge ok">enabled</span></td>
+          <td class="cell-name">
+            <div class="title">Monthly portfolio crawl (1st Sun)</div>
+            <div class="sub">Attorney-portfolio audit via Alameda Criminal Case Portal party search</div>
+            <div class="meta">First Sunday of each month, 02:30 (Madrid) · owner: Noonan · id: <code>monthly-portfolio-crawl</code></div>
+          </td>
+          <td class="cell-when">
+            <div class="sub">expected state set:</div>
+            <div>2026-05-26 (unchanged)</div>
+          </td>
+          <td class="cell-links">—</td>
+        </tr>
+        
+        <tr class="row-muted">
+          <td class="cell-status"><span class="badge muted">disabled</span></td>
+          <td class="cell-name">
+            <div class="title">Stan + Sac portal sweep (PARKED)</div>
+            <div class="sub">Weekly autonomous Stanislaus + Sacramento portal sweep — currently parked pending v0.3.3 cleanup</div>
+            <div class="meta">Mon 02:05 (Madrid) · owner: Noonan · id: <code>portal-sweep-stansac</code></div>
+          </td>
+          <td class="cell-when">
+            <div class="sub">expected state set:</div>
+            <div>2026-05-18 (parked)</div>
+          </td>
+          <td class="cell-links">—</td>
+        </tr>
+        </table>
+
+  <div class="footer">
+    Built by <code>ops-status-dashboard/build.py</code> · registry at
+    <code>~/Documents/Claude/Projects/Claude Operations/ops-status-dashboard/registry.json</code>
+  </div>
+</body></html>
