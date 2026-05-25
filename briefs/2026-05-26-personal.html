@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0a0e17">
+<title>Personal Brief — May 26, 2026</title>
+<style>
+  :root {
+    --bg: #0a0e17;
+    --bg-panel: #0f1421;
+    --bg-code: #141b2d;
+    --text: #e2e8f0;
+    --text-heading: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-detail: #cbd5e1;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.14);
+    --overdue: #ef4444;
+    --today: #f59e0b;
+    --upcoming: #3b82f6;
+    --matter: #60a5fa;
+    --court: #34d399;
+    --quote-border: #60a5fa;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
+    min-height: 100vh;
+  }
+  nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(10,14,23,0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  nav.topnav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+  }
+  nav.topnav a:hover, nav.topnav a.active {
+    color: var(--accent-hover);
+    background: rgba(96,165,250,0.08);
+  }
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 24px 18px 80px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-heading);
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 28px 0 12px;
+  }
+  h1 { font-size: 28px; margin-top: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+  h2 { font-size: 22px; margin-top: 32px; }
+  h3 { font-size: 18px; margin-top: 24px; color: var(--accent); }
+  h4 { font-size: 16px; color: var(--text-detail); }
+  p { margin: 10px 0; }
+  a { color: var(--accent); text-decoration: none; word-break: break-word; }
+  a:hover { color: var(--accent-hover); text-decoration: underline; }
+  strong { color: var(--text-heading); font-weight: 600; }
+  em { color: var(--text-detail); }
+  ul, ol { padding-left: 24px; margin: 10px 0; }
+  li { margin: 4px 0; }
+  li.task { list-style: none; margin-left: -20px; }
+  li.task input[type=checkbox] { margin-right: 8px; transform: scale(1.05); }
+  code {
+    background: var(--bg-code);
+    color: #fbbf24;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.88em;
+    border: 1px solid var(--border);
+  }
+  pre {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+    overflow-x: auto;
+    margin: 14px 0;
+  }
+  pre code {
+    background: transparent;
+    padding: 0;
+    border: 0;
+    color: var(--text);
+    font-size: 13px;
+  }
+  blockquote {
+    border-left: 3px solid var(--quote-border);
+    padding: 4px 14px;
+    margin: 14px 0;
+    color: var(--text-detail);
+    background: rgba(96,165,250,0.04);
+    border-radius: 0 6px 6px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+    white-space: normal;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    color: var(--text-heading);
+    font-weight: 600;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border-strong);
+  }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 24px 0; }
+  footer {
+    margin-top: 40px;
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+    text-align: center;
+  }
+  footer a { color: var(--text-muted); }
+  footer a:hover { color: var(--accent-hover); }
+
+  /* mobile tweaks */
+  @media (max-width: 640px) {
+    body { font-size: 15px; }
+    main { padding: 16px 14px 80px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 19px; }
+    h3 { font-size: 17px; }
+    table { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="https://mrbreadbaby.github.io/command-center/brief.html" class="active">Personal</a>
+  <a href="https://mrbreadbaby.github.io/command-center/firm/firm-brief-latest.html">Firm</a>
+  <a href="https://mrbreadbaby.github.io/command-center/">Dashboard</a>
+  <a href="https://mrbreadbaby.github.io/command-center/">Wiki Map</a>
+</nav>
+<main>
+<h1>Personal Brief — May 26, 2026</h1>
+<blockquote><p><strong>Heads up:</strong> No briefs were generated for 5/22, 5/23, 5/24, or 5/25 — the last brief on disk is 2026-05-21. The scheduled task either was disabled or didn&#x27;t fire for four days. If you want a back-fill catch-up, ask in chat.</p></blockquote>
+<h2>Today</h2>
+<ul>
+<li><strong>Calendar is empty</strong> on <code>admin@noonanlawoffices.com</code> and the Consultations calendar for the next 24 hrs. Your personal <code>jerwalter@gmail.com</code> calendar is not connected to this brief job, so any Spanish class / family events there are not reflected. → <a href="https://calendar.google.com/calendar/u/0/r">admin@ calendar</a></li>
+<li><strong>One actionable email</strong> — Krista Barresi (<code>KBarresi@js.management</code>) forwarded an invite from MG Ceruti (<code>liuto@earthlink.net</code>) re: Maui short-term-rental Bill 88 testimony, deadline Monday. Has been sitting unread since 5/25 11:08 PT. Skim and decide whether to engage. → <a href="https://mail.google.com/mail/u/0/#inbox/19e6052cf2805197">Gmail thread 19e6052cf2805197</a></li>
+</ul>
+<h2>Noonan (pointer)</h2>
+<ul>
+<li><strong>🔴 Mejia-Mejia jury trial — Tue 5/26</strong> is the carry-forward &quot;URGENT NEW&quot; item from the 5/21 brief (writ+stay v0.1 vs. § 1050 continuance vs. trial-prep decision). If JWN never resolved it last week, today is the date. <strong>No Noonan firm brief was run for today</strong> (Mon brief is the cadence and was skipped along with the personal one), so there is no current firm-side status on Mejia-Mejia, Bernal/Madrigalreyes 5/27, or Kramer/LaRosa/Blackwell outcomes — these have been silent in the triage queue since 5/21.</li>
+<li>Next scheduled Noonan firm brief: Thu 5/28 (per dual-brief Mon/Thu cadence — Mon was missed). → <a href="computer:///Users/jeremypemberton/Documents/Cases/Noonan/Admin/wiki/briefings/firm-2026-05-21.md">Last firm brief 2026-05-21</a></li>
+</ul>
+<h2>Personal tracks</h2>
+<ul>
+<li><strong>Med cycle</strong> — May 12/13/14 already passed; next cycle is June 12-14 (~2.5 weeks out). Nothing in the 3-day window.</li>
+<li><strong>FBI fingerprint</strong> — carry-forward; no recent change observed.</li>
+<li><strong>Shipment: monthly meds, SLO → Torrox</strong> (USPS <code>CA006765316US</code>, Priority Mail International) — last known status: <em>On the Way — Departed Post Office, San Luis Obispo CA, May 16, 2026 3:31 PM PT</em>. <strong>No live tracking lookup this run</strong> — scheduled-task scope, no Chrome browser session available to autonomously fetch USPS tracking. 9 days since departure on a typical 6–10-business-day window — should be arriving Spain side imminently if not already. → <a href="https://tools.usps.com/go/TrackConfirmAction?tLabels=CA006765316US">Track</a></li>
+<li><strong>AMMCG (Adamski Appeal)</strong> — handoff dated 2026-05-19 is the latest checkpoint; no hard deadline within 14 days.</li>
+</ul>
+<h2>Overnight (iMessage &amp; messages)</h2>
+<blockquote><p><strong>⚠️ chat.db mirror is stale.</strong> Latest message in the mirror is dated 2026-05-24 11:04 PT — about 28 hours old. The mirror file itself was last copied at May 25 05:53. The 7:50 AM PT cron may not have fired today, or the launchd plist needs a look. Treat the items below as Sun morning only — anything between Sun 11:04 PT and now is invisible to this brief.</p></blockquote>
+<ul>
+<li><strong>+18055038794</strong> (Sun 5/24 10:50–11:04 PT): LegalOwl branding decision discussion — you bought <code>legalowl.ai</code> after the vote (9 of 11 votes for LegalOwl). Naming-tool exploration continued through the morning (Lawjet, Lawhand, Briefclerk, etc.). Personal/LawTime Dev — no Noonan firm content.</li>
+<li><strong>+34657747032</strong> (Thu 5/21 evening — last messages from that thread): BBQ planning, family bringing food. Not actionable.</li>
+<li><strong>+18054594195</strong> (Thu 5/21): &quot;Give me a call&quot; / &quot;What department?&quot; — looks resolved on the same thread, but worth a glance.</li>
+</ul>
+<h2>Inbox</h2>
+<ul>
+<li><strong>KBarresi@js.management → Fwd: Maui STR Bill 88 testimony</strong> — unread; deadline Monday (Memorial Day, US — Hawaii presumably observing). → <a href="https://mail.google.com/mail/u/0/#inbox/19e6052cf2805197">Thread 19e6052cf2805197</a></li>
+<li><strong>Otherwise:</strong> no action required — inbox is unusually quiet for a Mon morning PT (likely Memorial Day weekend effect).</li>
+</ul>
+<h2>Triage queue (top 6)</h2>
+<ol>
+<li><strong>🔴🔴🔴 Mejia-Mejia 22-CR-003198 — Jury Trial Tue 5/26 — writ+stay vs. § 1050 vs. trial prep decision</strong> — asked 2026-05-21 by dispatch-overnight-resume. <strong>Today is the trial date.</strong> Writ+Stay v0.1 drafted 5/3 awaiting Yurandi verification + JWN signature. If unresolved, this is the #1 firm crisis of the week.</li>
+<li><strong>🔴🔴 Kramer 25-CR-016971 NO-SHOW outcome still unknown — now ~6 days post-hearing</strong> — asked 2026-05-20, refreshed 2026-05-21. Three answering-service VMs from 5/19 confirm hearing went forward at 9 AM PT Dept 11 WMC Oakland without a Noonan appearance. Outcome still not in admin@ inbox or in any triage entry.</li>
+<li><strong>🔴 LaRosa hearing outcome (Mon 5/18 1:30 PM Pittsburg) — still silent at ~7 days post-hearing</strong> — Donald has not emailed; consider proactive outreach.</li>
+<li><strong>🟡 LawPay charge FAILED — Benita Villegas $300 (5/19)</strong> — asked 2026-05-20. Christine typically reconciles, but it&#x27;s been 6 days.</li>
+<li><strong>🟡 Bernal + Madrigalreyes 5/27 coverage gap</strong> — asked 2026-05-21; hearings TOMORROW (Wed 5/27) ECHOJ Dublin. JWN coverage decision needed pre-5/27 — that&#x27;s today.</li>
+<li><strong>🟡 Ruiz Salas Tyler envelope #2856278 — Marie Mui requested resubmit 5/15</strong> — now 10 days stale; court-clerk request aging into coverage-gap territory.</li>
+</ol>
+<p><code>run the queue</code> to pop these via AskUserQuestion.</p>
+<h2>Red flags</h2>
+<ul>
+<li><strong>chat.db mirror cron likely not firing</strong> — 28h since latest message, last copy May 25 05:53. Personal-brief overnight coverage is degraded until fixed. <em>(carry forward)</em></li>
+<li><strong>4 personal briefs missing (5/22 → 5/25)</strong> — scheduled task was off. Coverage gap in personal track. <em>(new today)</em></li>
+<li><strong>Mon Noonan firm brief was also skipped</strong> — no firm-side updates since 5/21. Carry-forward Noonan items in the triage queue may have resolved or worsened without anyone surfacing it. <em>(new today)</em></li>
+<li><strong>Mejia-Mejia trial day with no documented resolution to last week&#x27;s writ-vs-trial decision</strong> — if the writ+stay was never filed and the trial is going forward today, that&#x27;s a hard pivot. <em>(escalating from 5/21)</em></li>
+</ul>
+<h2>Live dashboards</h2>
+<ul>
+<li><a href="https://mrbreadbaby.github.io/command-center/">Practice Wiki Map</a></li>
+<li><a href="https://mrbreadbaby.github.io/command-center/audit.html">System Audit</a></li>
+<li><a href="computer:///Users/jeremypemberton/Documents/Cases/Noonan/Admin/wiki/hot.md">Hot Cache</a></li>
+<li><a href="computer:///Users/jeremypemberton/Documents/wiki/triage/OPEN_QUESTIONS.md">Triage Queue</a></li>
+<li><a href="computer:///Users/jeremypemberton/Documents/Cases/Noonan/Admin/Noonan_Practice_Dashboard.md">Noonan Practice Dashboard</a></li>
+<li><a href="computer:///Users/jeremypemberton/Documents/Cases/Noonan/Admin/wiki/briefings/firm-2026-05-21.md">Last Noonan Brief (5/21)</a></li>
+</ul>
+<h2>Notes</h2>
+<ul>
+<li>Today is Tuesday 5/26 in Spain (CET); Monday 5/25 in PT. This run fired at 00:34 CET / 15:34 PT — well after the usual ~6 AM PT slot. The combination of timing + the 4-day gap + the chat.db cron gap suggests the scheduled-task infrastructure had a wobble over the long weekend. Worth a 10-min check.</li>
+</ul>
+<footer>
+  Generated 2026-05-25 15:34 PT &middot;
+  <a href="computer:///sessions/practical-optimistic-euler/mnt/Documents/wiki/briefings/2026-05-26.md">Open source .md in iCloud</a>
+  &middot; <a href="https://mrbreadbaby.github.io/command-center/">Dashboard</a>
+</footer>
+</main>
+</body>
+</html>
